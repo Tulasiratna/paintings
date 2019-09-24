@@ -1,15 +1,22 @@
-<h1>Artisie</h1>
-<h2>All arts</h2>
 
-<div class="card-columns">
-  <% @paintings.each do |painting| %>
-    <%= link_to painting_path(painting) do  %>
-      <div class="card">
-        <%= image_tag painting.image, class: "card-img-top" %>
-        <h6><%= painting.title %></h6>
-      </div>
+<div class="container .bg-light">
+  <div class="title text-center">
+    <h1>Artisie</h1>
+  </div>
+  <div class="description pb-2 text-right">
+    <p>All arts</p>
+  </div>
+
+  <div class="card-columns">
+    <% @paintings.each do |painting| %>
+      <%= link_to painting_path(painting) do  %>
+        <div class="card">
+          <%= image_tag painting.image, class: "card-img-top" %>
+          <h6><%= painting.title %></h6>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
-<%= link_to 'Add a new piece', new_painting_path %>
+  <%= link_to 'Add a new piece', new_painting_path %>
+</div>
