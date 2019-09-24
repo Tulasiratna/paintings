@@ -1,10 +1,17 @@
 <h1>Artisie</h1>
 <h2>All arts</h2>
 
-<% @paintings.each do |p| %>
-<%= @paintings.title %>
-<%= @paintings.image %>
-<%= @paintings.description %>
-<%= @paintings.price %>
+<% @paintings.each do |painting| %>
+<div class="card-columns">
+  <div class="card">
+  <img src="<%= link_to image_tag(painting.image), painting_path %>" class="card-img-top" alt="<%= painting.title %>">
+  <%= painting.title %>
+  </div>
+</div>
+
+<!-- <%#= painting.description %> -->
+<!-- <%#= painting.category %> -->
+<!-- <%#= painting.price %> -->
 <% end %>
 
+<%= link_to 'Add a new piece', new_painting_path %>
