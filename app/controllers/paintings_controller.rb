@@ -7,9 +7,12 @@ class PaintingsController < ApplicationController
   end
 
   def new
+    @painting = Painting.new
   end
 
   def create
+    painting = Painting.create(params[:id])
+    redirect_to painting_path(id: painting.id)
   end
 
   def edit

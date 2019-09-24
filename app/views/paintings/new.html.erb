@@ -1,2 +1,13 @@
-<h1>Paintings#new</h1>
+<h1>Paintings</h1>
 <p>Find me in app/views/paintings/new.html.erb</p>
+
+    <%= simple_form_for(@painting) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :category %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :image %>
+    <%= f.input :image_cache, as: :hidden %>
+    <%= f.submit %>
+
+    <% end %>
