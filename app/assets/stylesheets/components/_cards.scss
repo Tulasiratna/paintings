@@ -1,0 +1,31 @@
+.card-painting-wrapper {
+  // width: 100vw;
+  width: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+
+  }
+
+.cardpainting {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 30vw;
+  padding-bottom: 8px;
+}
+
+.cardpainting > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  padding: 15px;
+}
+
+.cardpainting h2 {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0px 15px;
+}
