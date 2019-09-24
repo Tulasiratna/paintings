@@ -3,6 +3,10 @@ class PaintingsController < ApplicationController
     @paintings = Painting.all
   end
 
+  def show
+    @painting = Painting.find(params[:id])
+  end
+
   def destroy
   end
 
@@ -19,5 +23,11 @@ class PaintingsController < ApplicationController
   end
 
   def update
+  end
+
+  private
+
+  def painting_params
+    params.require(:painting).permit(:title, :category, :description, :image, :price)
   end
 end

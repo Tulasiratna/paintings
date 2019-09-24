@@ -1,10 +1,11 @@
 <h1>Artisie</h1>
 <h2>All arts</h2>
 
-<% @paintings.each do |p| %>
-<%= @paintings.title %>
-<%= @paintings.image %>
-<%= @paintings.description %>
-<%= @paintings.price %>
+<% @paintings.each do |painting| %>
+
+<%= painting.title %>
+<%= painting.image %>
+<%= painting.description %>
+<%= painting.price %>
 <% end %>
 

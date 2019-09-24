@@ -77,8 +77,8 @@ Painting.create!(
   category: 'Grafitti',
   price: '100000',
   description: 'jesus christ painting',
-  image: 'https://images.unsplash.com/photo-1548092749-23b40567cb0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-  )
+  image: 'https://images.unsplash.com/photo-1510333337682-fdd0eba357a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80'
+ )
 
 Painting.create!(
   title: 'sky',
