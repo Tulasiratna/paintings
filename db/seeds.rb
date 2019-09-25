@@ -23,13 +23,6 @@ Painting.create!([
     image: 'https://images.unsplash.com/photo-1515405295579-ba7b45403062?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
   },
   {
-    title: 'religious',
-    category: 'Grafitti',
-    price: '90000',
-    description: 'religious painting',
-    image: 'https://unsplash.com/photos/aAxn9pYE8L0'
-  },
-  {
     title: 'sky',
     category: 'Grafitti',
     price: '100000',
@@ -64,7 +57,7 @@ Painting.create!([
     description: 'animal grafitti painting',
     image: 'https://images.unsplash.com/photo-1508341421810-36b8fc06075b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
     },
-  
+
   {
     title: "Title",
     category: "Some decription",
