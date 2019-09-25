@@ -27,6 +27,10 @@ class PaintingsController < ApplicationController
 
   private
 
+  def booking_params
+    params.require(:booking).permit(:start_date, end_date)
+  end
+
   def painting_params
     params.require(:painting).permit(:title, :category, :description, :image, :price)
   end
