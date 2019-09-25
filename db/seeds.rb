@@ -15,7 +15,7 @@ p "Paintings Destroyed!"
 
 p "Creating paintins..."
 
-Painting.create!([
+paintings_data = [
   {
     title: 'Ocean sky',
     category: 'Abstract',
@@ -43,7 +43,7 @@ Painting.create!([
     price: '50',
     description: 'The painting Rainbows motive is a rainbow covered in fog at a very cloudy afternoon.',
     image: 'https://images.unsplash.com/photo-1552510373-4a5a165dbfb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80'
-    },
+  },
   {
     title: 'Jesus',
     category: 'Grafitti',
@@ -57,13 +57,13 @@ Painting.create!([
     price: '200',
     description: 'A very happy artist who just got her very colour full cat',
     image: 'https://images.unsplash.com/photo-1508341421810-36b8fc06075b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
-    },
+  },
 
   {
     title: 'Fire and burn',
     category: 'Modern',
     price: '110',
-    description: ,A large painting that is best suited on a really brigth heigh white wall.
+    description: 'A large painting that is best suited on a really brigth heigh white wall.',
     image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=695&q=80'
   },
   {
@@ -77,7 +77,7 @@ Painting.create!([
     title: 'Titeki',
     category: 'Modern',
     price: '90',
-    description: 'Sandy beach outside Bali during Indonisia's florishing fishing period.'
+    description: "Sandy beach outside Bali during Indonisia's florishing fishing period.",
     image: 'https://images.unsplash.com/photo-1544867885-2333f61544ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80'
   },
   {
@@ -91,115 +91,46 @@ Painting.create!([
     title: 'Tulips fasting',
     category: 'Figurativism',
     price: '40',
-    description: 'Painted in the Netherlands during the heights of their tulips period.'
+    description: 'Painted in the Netherlands during the heights of their tulips period.',
     image: 'https://images.unsplash.com/photo-1532540983331-3260f8487880?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1045&q=80'
   },
   {
     title: 'Fasting genius',
     category: 'Modern',
     price: '200',
-    description: 'Painted with colourfull colours in a dark room by colourblind painter.'
+    description: 'Painted with colourfull colours in a dark room by colourblind painter.',
     image: 'https://images.unsplash.com/photo-1541723011216-c57eaed19919?ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80'
   },
   {
     title: 'Genius itery',
     category: 'Modern',
     price: '300',
-    description: 'Colour in a mixture found in a series of paintings by this artsist.'
+    description: 'Colour in a mixture found in a series of paintings by this artsist.',
     image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80'
   },
- {
+  {
     title: 'Smasch',
     category: 'Modern',
     price: '240',
-    description: 'One of the happiest paintings in the world. You will laugh 24/7. It is impossible to be sad holding this in your hand!'
+    description: 'One of the happiest paintings in the world. You will laugh 24/7. It is impossible to be sad holding this in your hand!',
     image: 'https://images.unsplash.com/photo-1541723568817-3bb3d2dd5505?ixlib=rb-1.2.1&auto=format&fit=crop&w=374&q=80'
   },
-{
+  {
     title: 'Must by by end of yesterday',
     category: 'Modern',
     price: '40',
-    description: 'Painted during the artist in the forrest during picking and eating mushrooms... hence the colours.'
+    description: 'Painted during the artist in the forrest during picking and eating mushrooms... hence the colours.',
     image: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80'
   },
-])
-Painting.create!(
-  title: 'Woman painting',
-  category: 'Grafitti',
-  price: '100000',
-  description: 'woman grafitti painting',
-  image: 'https://images.unsplash.com/photo-1552355757-f3e12728818f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=779&q=80'
-  )
+]
 
-Painting.create!(
-  title: 'Fruits',
-  category: 'Oil painting',
-  price: '80000',
-  description: 'fruits painting',
-  image: 'https://images.unsplash.com/photo-1531422069976-fa2e0e2d030e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=444&q=80'
-  )
+paintings_data.each do |data|
+  painting = Painting.new(data)
+  # upload stuff
+  painting.remote_image_url = data[:image]
+  painting.save
+end
 
-Painting.create!(
-  title: 'Mountains',
-  category: 'greenery painting',
-  price: '60000',
-  description: 'green mountainpainting',
-  image: 'https://images.unsplash.com/photo-1562337590-8957b1efac63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'
-  )
 
-Painting.create!(
-  title: 'brown and white',
-  category: 'marble',
-  price: '100000',
-  description: 'brown and white abstract painting',
-  image: 'https://images.unsplash.com/photo-1555580168-9fb9646a8a1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
-  )
 
-Painting.create!(
-  title: 'smile',
-  category: 'oil painting',
-  price: '100000',
-  description: 'add smile to your face through painting',
-  image: 'https://images.unsplash.com/photo-1542226601-bc82e276ae0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80'
-  )
-
-Painting.create!(
-  title: 'animal',
-  category: 'Grafitti',
-  price: '90000',
-  description: 'animal grafitti painting',
-  image: 'https://images.unsplash.com/photo-1508341421810-36b8fc06075b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
-  )
-
-Painting.create!(
-  title: 'Rainbow',
-  category: 'Grafitti',
-  price: '100000',
-  description: 'Add colors to your home with painting',
-  image: 'https://images.unsplash.com/photo-1552510373-4a5a165dbfb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80'
-  )
-
-Painting.create!(
-  title: 'jesus',
-  category: 'Grafitti',
-  price: '100000',
-  description: 'jesus christ painting',
-  image: 'https://images.unsplash.com/photo-1510333337682-fdd0eba357a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80'
- )
-
-Painting.create!(
-  title: 'sky',
-  category: 'Grafitti',
-  price: '100000',
-  description: 'cloudy sky painting',
-  image: 'https://images.unsplash.com/photo-1544867885-2333f61544ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'
-  )
-
-Painting.create!(
-  title: 'religious',
-  category: 'Grafitti',
-  price: '90000',
-  description: 'religious painting',
-  image: 'https://images.unsplash.com/photo-1559096742-cb0e4bacb67b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80'
-  )
 p "Paintings Created!"
