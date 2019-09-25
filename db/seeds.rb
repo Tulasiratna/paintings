@@ -63,7 +63,7 @@ Painting.create!([
     title: 'Fire and burn',
     category: 'Modern',
     price: '110',
-    description: ,A large painting that is best suited on a really brigth heigh white wall.
+    description: A large painting that is best suited on a really brigth heigh white wall.
     image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=695&q=80'
   },
   {
