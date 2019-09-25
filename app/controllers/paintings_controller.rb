@@ -15,11 +15,16 @@ class PaintingsController < ApplicationController
   end
 
   def create
-    painting = Painting.create(params[:id])
-    redirect_to painting_path(id: painting.id)
+    @painting = Painting.new(painting_params)
+    if @painting.save
+      redirect_to painting_path(@painting)
+    else
+      render :new
+    end
   end
 
   def edit
+    @painting = Painting.find(params[:id])
   end
 
   def update

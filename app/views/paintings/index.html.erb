@@ -11,7 +11,7 @@
     <% @paintings.each do |painting| %>
       <%= link_to painting_path(painting) do  %>
         <div class="card">
-          <%= image_tag painting.image, class: "card-img-top" %>
+          <%= cl_image_tag painting.image, class: "card-img-top" %>
           <h6><%= painting.title %></h6>
         </div>
       <% end %>
