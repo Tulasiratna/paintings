@@ -1,2 +1,16 @@
-<h1>Paintings#edit</h1>
-<p>Find me in app/views/paintings/edit.html.erb</p>
+<div class="container">
+  <div class="col-lg-8 justify-content-center">
+    <h1>Edit a Painting</h1>
+
+    <%= simple_form_for(@painting) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :category %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :image %>
+    <%= f.input :image_cache, as: :hidden %>
+    <%= f.submit %>
+
+    <% end %>
+  </div>
+</div>
