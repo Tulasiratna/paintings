@@ -10,4 +10,32 @@
     <p><%= @painting.description %></p>
   </div>
 </div>
+  <div class="row">
+    <div class="col-12 col-md-10 col-lg-8">
+      <div class="card" style="width: 32rem;">
+        <img src="<%= @painting.image %>" class="card-img-top" alt="@painting.title">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= @painting.title %>
+          </h5>
+          <p class="card-text">
+            <%= @painting.description %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-2 col-lg-4">
+      <div class="my-4 flex-start">
+        <h4><%= @painting.category %></h4>
+        <h4><%= @painting.price %> NOK</h4>
+      </div>
+      <div>
+        <!-- Please replace the painting path with booking path when the booking feature is done -->
+        <button type="button" class="btn btn-lg btn-outline-primary">
+          <%= link_to "Booking", painting_path %>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
+
