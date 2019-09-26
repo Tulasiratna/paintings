@@ -16,17 +16,26 @@ class PaintingsController < ApplicationController
   end
 
   def create
-    @painting = Painting.find(:painting_id)
-    redirect_to painting_path(id: painting.id)
-
-    booking = Booking.new(booking_params)
-    booking.painting = @painting
+    @painting = Painting.new(painting_params)
+    if @painting.save
+      redirect_to painting_path(@painting)
+    else
+      render :new
+    end
   end
 
   def edit
+    @painting = Painting.find(params[:id])
   end
 
   def update
+    #@painting = Painting.new(painting_params)
+    @painting = Painting.find(params[:id])
+    if @painting.update(painting_params)
+      redirect_to painting_path(@painting)
+    else
+      render :edit
+    end
   end
 
   private
