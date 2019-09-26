@@ -1,6 +1,12 @@
 class PaintingsController < ApplicationController
+
   def index
     @paintings = Painting.all
+  end
+
+  def dashboard
+    # index
+    @bookings = Booking.all
   end
 
   def show

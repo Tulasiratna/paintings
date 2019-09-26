@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard', to: 'paintings#dashboard', as: :dashboard
   resources :paintings do
     resources :bookings, only: [:create]
   end
