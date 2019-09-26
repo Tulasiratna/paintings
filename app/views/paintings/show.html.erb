@@ -20,11 +20,26 @@
       </div>
       <div>
         <!-- Please replace the painting path with booking path when the booking feature is done -->
+        <%= simple_form_for([@painting, @booking]) do |f| %>
+        <div class="dates">
+          <div class="form-inputs">
+            <div class="form-row">
+              <%= f.input :start_date, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+              <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", wrapper_html: { class: "inline_field_wrapper" } %>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+        </div>
+        <% end %>
         <button type="button" class="btn btn-lg btn-outline-primary">
-          <%= link_to "Booking", painting_path %>
+        <!-- replace the path with dashboard path -->
+          <!-- <%#= link_to "Booking", painting_bookings_path %> -->
         </button>
       </div>
     </div>
   </div>
+
 </div>
 

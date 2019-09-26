@@ -5,6 +5,7 @@ class PaintingsController < ApplicationController
 
   def show
     @painting = Painting.find(params[:id])
+    @booking = Booking.new
   end
 
   def destroy
@@ -38,6 +39,10 @@ class PaintingsController < ApplicationController
   end
 
   private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, end_date)
+  end
 
   def painting_params
     params.require(:painting).permit(:title, :category, :description, :image, :price)
