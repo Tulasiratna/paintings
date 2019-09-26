@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   def create
     @painting = Painting.find(params[:painting_id])
     @booking = Booking.new(booking_params)
-    @booking.developer = @developer
+    @booking.painting = @painting
     @booking.user = current_user
     if @booking.save
       redirect_to paintings_path
@@ -14,6 +14,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, end_date)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
