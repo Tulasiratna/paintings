@@ -28,7 +28,6 @@ class PaintingsController < ApplicationController
   end
 
   def update
-    #@painting = Painting.new(painting_params)
     @painting = Painting.find(params[:id])
     if @painting.update(painting_params)
       redirect_to painting_path(@painting)
