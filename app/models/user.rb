@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :paintings
-  validates :first_name, :last_name, :username, presence: true
-  validates :username, uniqueness: true
+  # validates :first_name, :last_name, :username, presence: true
+  # validates :username, uniqueness: true
 end
