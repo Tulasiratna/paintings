@@ -2,9 +2,9 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :painting
 
-  validates :start_date, :end_date, presence: true, availability: true
+  validates :start_date, :end_date, presence: true
   # validates the starting date is not later than the end date
-  validates :end_date_after_start_date
+  validates :end_date_after_start_date, presence: true
 
   def booked_date_range
     { from: :start_date, to: :end_date }

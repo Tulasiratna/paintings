@@ -5,6 +5,7 @@ class PaintingsController < ApplicationController
 
   def show
     @painting = Painting.find(params[:id])
+    @booking = Booking.new
   end
 
   def destroy
@@ -15,8 +16,11 @@ class PaintingsController < ApplicationController
   end
 
   def create
-    painting = Painting.create(params[:id])
+    @painting = Painting.find(:painting_id)
     redirect_to painting_path(id: painting.id)
+
+    booking = Booking.new(booking_params)
+    booking.painting = @painting
   end
 
   def edit
