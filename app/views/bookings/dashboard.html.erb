@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="title text-center py-3">
+    <p class="dashboard-title" >My bookings</p>
+    <p>Hi, <%= current_user.email %></p>
+  </div>
+
+  <div class="card-columns">
+    <% @bookings.each do |booking| %>
+    <div class="main_card">
+      <div class="card indie_card px-5 py-3">
+        <p>You have booked <%= booking.painting.title %> from <%= booking.start_date %> to <%= booking.end_date %></p>
+        <img class="card-img-top", src="<%= booking.painting.image %>">
+        <p class="pt-3 text-right">created at <%= booking.created_at.localtime.strftime '%Y-%m-%d %H:%M:%S' %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+

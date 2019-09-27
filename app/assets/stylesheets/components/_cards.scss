@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 12px;
-  }
+}
 
 .cardpainting {
   overflow: hidden;
@@ -13,27 +13,27 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 30vw;
   padding-bottom: 8px;
-}
 
-.cardpainting > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  padding: 15px;
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    padding: 15px;
+  }
 }
-
-// .cardpainting h2 {
-//   font-size: 12px;
-//   font-weight: bold;
-//   margin: 0;
-//   padding: 0px 15px;
-// }
 
 .main_card {
   padding: 26px 32px;
+
   p {
-      text-decoration: none;
-      color: #A9A9A9;
-      font-size: 12px;
-    }
+    text-decoration: none;
+    color: #A9A9A9;
+    font-size: 12px;
+  }
+}
+
+.dashboard-title {
+  font-family: 'Mansalva', cursive;
+  font-size: 42px;
+  color: #383838;
 }

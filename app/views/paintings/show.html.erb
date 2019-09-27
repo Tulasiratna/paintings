@@ -21,7 +21,7 @@
       <div>
         <!-- Please replace the painting path with booking path when the booking feature is done -->
         <!-- <%#= simple_form_for([@painting, @booking], :url => url_for(:action => 'create', :controller => 'bookings', :method => 'post')) do |f| %> -->
-        <%= simple_form_for([@painting, @booking], :url => url_for(:action => 'dashboard', :controller => 'paintings', :method => 'post')) do |f| %>
+        <%= simple_form_for([@painting, @booking]) do |f| %>
         <div class="dates">
           <div class="form-inputs">
             <div class="form-row">
