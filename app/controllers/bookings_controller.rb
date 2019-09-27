@@ -14,9 +14,20 @@ class BookingsController < ApplicationController
     @booking.painting = @painting
     @booking.user = current_user
     if @booking.save
-      redirect_to dashboard_path
+      flash[:notice] = "Your painting has been booked"
+      redirect_to paintings_path
     else
+      flash[:error] = "Booking unsuccessful"
       render 'paintings/show'
+    end
+  end
+
+  def confirm
+    @booking.confirmed = true
+    if @booking.save
+      redirect_to painting_path(@painting)
+    else
+      render "new"
     end
   end
 
