@@ -1,10 +1,15 @@
 class BookingsController < ApplicationController
+
   before_action :authenticate_user!
 
   def new
     @painting = Painting.find(params[:painting_id])
     @booking = @painting.bookings.new(quantity: params[:quantity])
     @booking.user = current_user
+
+  def dashboard
+    # index
+    @bookings = Booking.all
   end
 
   def create

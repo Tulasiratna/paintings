@@ -4,11 +4,6 @@ class PaintingsController < ApplicationController
     @paintings = Painting.all
   end
 
-  def dashboard
-    # index
-    @bookings = Booking.all
-  end
-
   def show
     @painting = Painting.find(params[:id])
     @booking = Booking.new
