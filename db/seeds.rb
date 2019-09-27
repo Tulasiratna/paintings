@@ -7,13 +7,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-p "Destroying Paintings.."
+p "Destroying Bookings and Paintings.."
 
+Booking.destroy_all
 Painting.destroy_all
 
-p "Paintings Destroyed!"
+p "Bookings and Paintings Destroyed!"
 
-p "Creating paintins..."
+p "Creating paintings..."
 
 paintings_data = [
   {
