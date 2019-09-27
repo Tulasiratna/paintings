@@ -26,3 +26,19 @@
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
+
+.home-button {
+  color: white;
+  text-decoration: none;
+  background: #2c475c;
+  padding: 10px 18px;
+  margin: 6px;
+  border-radius: 4px;
+  opacity: 0.8;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.6;
+  }
+}
