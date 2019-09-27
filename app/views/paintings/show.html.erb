@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 col-lg-8">
-      <div class="card" style="width: 32rem;">
-        <img src="<%= @painting.image %>" class="card-img-top" alt="@painting.title">
         <div class="card-body">
+      <div class="card-show">
+        <img src="<%= @painting.image %>" class="card-img-top" alt="@painting.title">
+      </div>
           <h5 class="card-title">
             <%= @painting.title %>
           </h5>
-          <p class="card-text">
+          <p class="card-text ">
             <%= @painting.description %>
           </p>
         </div>
-      </div>
     </div>
     <div class="col-12 col-md-2 col-lg-4">
       <div class="my-4 flex-start">
@@ -25,8 +25,8 @@
         <div class="dates">
           <div class="form-inputs">
             <div class="form-row">
-              <%= f.input :start_date, as: :string, label: "Dates from", placeholder: "yy/mm/dd", wrapper_html: { class: "inline_field_wrapper" } %>
-              <%= f.input :end_date, as: :string, label: 'to', placeholder: "yy/mm/dd", wrapper_html: { class: "inline_field_wrapper" } %>
+              <%= f.input :start_date, as: :string, input_html: { class: "datepicker" }, label: "Dates from", placeholder: "yy/mm/dd", wrapper_html: { class: "inline_field_wrapper" } %>
+              <%= f.input :end_date, as: :string, input_html: { class: "datepicker" }, label: 'to', placeholder: "yy/mm/dd", wrapper_html: { class: "inline_field_wrapper" } %>
             </div>
           </div>
         </div>
@@ -34,6 +34,8 @@
           <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
         </div>
         <% end %>
+        <!-- replace the path with dashboard path -->
+          <!-- <%#= link_to "Booking", painting_bookings_path %> -->
       </div>
 
     </div>
