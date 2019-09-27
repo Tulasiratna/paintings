@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
     @painting = Painting.find(params[:painting_id])
     @booking = @painting.bookings.new(quantity: params[:quantity])
     @booking.user = current_user
+  end
 
   def dashboard
     # index
@@ -35,7 +36,6 @@ class BookingsController < ApplicationController
       render "new"
     end
   end
-
 
   private
 
