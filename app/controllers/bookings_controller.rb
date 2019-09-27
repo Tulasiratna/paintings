@@ -1,11 +1,15 @@
 class BookingsController < ApplicationController
+
+  before_action :authenticate_user!
+
+  def new
+    @painting = Painting.find(params[:painting_id])
+    @booking = @painting.bookings.new(quantity: params[:quantity])
+    @booking.user = current_user
+
   def dashboard
     # index
     @bookings = Booking.all
-  end
-
-  def new
-    @booking = Booking.new
   end
 
   def create
@@ -13,6 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.painting = @painting
     @booking.user = current_user
+
     if @booking.save
       flash[:notice] = "Your painting has been booked"
       redirect_to paintings_path
@@ -31,9 +36,10 @@ class BookingsController < ApplicationController
     end
   end
 
+
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :painting_id)
   end
 end
