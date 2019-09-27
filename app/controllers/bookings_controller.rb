@@ -1,11 +1,20 @@
 class BookingsController < ApplicationController
+  def dashboard
+    # index
+    @bookings = Booking.all
+  end
+
+  def new
+    @booking = Booking.new
+  end
+
   def create
     @painting = Painting.find(params[:painting_id])
     @booking = Booking.new(booking_params)
     @booking.painting = @painting
     @booking.user = current_user
     if @booking.save
-      redirect_to paintings_path
+      redirect_to dashboard_path
     else
       render 'paintings/show'
     end
