@@ -1,5 +1,4 @@
 require 'date'
-
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :painting
@@ -11,6 +10,10 @@ class Booking < ApplicationRecord
 
   def booked_date_range
     { from: :start_date, to: :end_date }
+  end
+
+  def set_booking_number
+    Self.booking_number = "MAMA" + '- ' + SecureRandom.hex(4).upcase
   end
 
   private
@@ -25,11 +28,11 @@ class Booking < ApplicationRecord
     end
   end
 
-  # def date_after_today
-  #   if Date.today > :start_date
-  #     return false
-  #   else
-  #     errors.add('The date cannot be before today')
-  #   end
-  # end
+    # def date_after_today
+    #   if Date.today > :start_date
+    #     return false
+    #   else
+    #     errors.add('The date cannot be before today')
+    #   end
+    # end
 end
