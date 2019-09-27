@@ -1,11 +1,11 @@
 class BookingsController < ApplicationController
   def create
-    @painting = Painting.find(params[:painting_id])
+    @painting = Painting.find(params[:id])
     @booking = Booking.new(booking_params)
     @booking.painting = @painting
     @booking.user = current_user
     if @booking.save
-      redirect_to paintings_path
+      redirect_to dashboard_path
     else
       render 'paintings/show'
     end
